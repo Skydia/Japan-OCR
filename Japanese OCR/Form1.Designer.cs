@@ -37,38 +37,38 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(24, 212);
+            this.button1.Location = new System.Drawing.Point(24, 192);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 23);
+            this.button1.Size = new System.Drawing.Size(98, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "In Hiragana";
+            this.button1.Text = "To Hiragana";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(153, 212);
+            this.button2.Location = new System.Drawing.Point(155, 192);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(98, 23);
             this.button2.TabIndex = 2;
-            this.button2.Text = "In Katakana";
+            this.button2.Text = "To Katakana";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(270, 212);
+            this.button3.Location = new System.Drawing.Point(286, 192);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(98, 23);
             this.button3.TabIndex = 3;
-            this.button3.Text = "In Romaji";
+            this.button3.Text = "To Romaji";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 187);
+            this.label1.Location = new System.Drawing.Point(12, 176);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 4;
@@ -78,7 +78,7 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(24, 21);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(321, 152);
+            this.richTextBox1.Size = new System.Drawing.Size(360, 152);
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = "";
             // 
@@ -86,7 +86,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(370, 260);
+            this.ClientSize = new System.Drawing.Size(399, 229);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);

@@ -17,7 +17,7 @@ namespace Japanese_OCR
         {
             Hiragana,
             Katakana,
-            Romaji
+            Romaji,
         }
 
         private List<string> Database = new List<string>();
@@ -63,52 +63,51 @@ namespace Japanese_OCR
                         break;
                     case Mode.Hiragana:
                         text = text.Replace(roma, hira);
+                        text = text.Replace(kata, hira);
                         break;
                     case Mode.Katakana:
                         text = text.Replace(roma, kata);
+                        text = text.Replace(hira, kata);
                         break;
                 }
             }
             return text;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private String process()
         {
             OpenFileDialog openfile = new OpenFileDialog();
+            String inputText;
             if (openfile.ShowDialog() == DialogResult.OK)
             {
                 Bitmap img = new Bitmap(openfile.FileName);
                 TesseractEngine ocr = new TesseractEngine("./tessdata", "jpn", EngineMode.Default);
                 Page page = ocr.Process(img, PageSegMode.Auto);
-                String inputText = page.GetText();
-                richTextBox1.Text = Convert(inputText, Mode.Hiragana);
+                inputText = page.GetText();
             }
+            else
+            {
+                inputText = "";
+            }
+            return inputText;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String inputText = process();
+            richTextBox1.Text = Convert(inputText, Mode.Hiragana);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openfile = new OpenFileDialog();
-            if (openfile.ShowDialog() == DialogResult.OK)
-            {
-                Bitmap img = new Bitmap(openfile.FileName);
-                TesseractEngine ocr = new TesseractEngine("./tessdata", "jpn", EngineMode.Default);
-                Page page = ocr.Process(img, PageSegMode.Auto);
-                String inputText = page.GetText();
-                richTextBox1.Text = Convert(inputText, Mode.Katakana);
-            }
+            String inputText = process();
+            richTextBox1.Text = Convert(inputText, Mode.Katakana);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openfile = new OpenFileDialog();
-            if (openfile.ShowDialog() == DialogResult.OK)
-            {
-                Bitmap img = new Bitmap(openfile.FileName);
-                TesseractEngine ocr = new TesseractEngine("./tessdata", "jpn", EngineMode.Default);
-                Page page = ocr.Process(img, PageSegMode.Auto);
-                String inputText = page.GetText();
-                richTextBox1.Text = Convert(inputText, Mode.Romaji);
-            }
+            String inputText = process();
+            richTextBox1.Text = Convert(inputText, Mode.Romaji);
         }
     }
 }
