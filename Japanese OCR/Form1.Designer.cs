@@ -37,7 +37,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(24, 192);
+            this.button1.Location = new System.Drawing.Point(12, 192);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 23);
             this.button1.TabIndex = 1;
@@ -47,7 +47,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(155, 192);
+            this.button2.Location = new System.Drawing.Point(150, 192);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(98, 23);
             this.button2.TabIndex = 2;
@@ -76,9 +76,9 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(24, 21);
+            this.richTextBox1.Location = new System.Drawing.Point(12, 21);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(360, 152);
+            this.richTextBox1.Size = new System.Drawing.Size(372, 152);
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = "";
             // 
@@ -92,6 +92,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "Japanese OCR";
             this.ResumeLayout(false);

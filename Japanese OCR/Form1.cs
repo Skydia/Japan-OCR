@@ -25,6 +25,7 @@ namespace Japanese_OCR
         public Form1()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
             GetDatabase();
         }
 
