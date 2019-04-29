@@ -13,9 +13,63 @@ namespace Japanese_OCR
 {
     public partial class Form1 : Form
     {
+        enum Mode
+        {
+            Hiragana,
+            Katakana,
+            Romaji
+        }
+
+        private List<string> Database = new List<string>();
+
         public Form1()
         {
             InitializeComponent();
+            GetDatabase();
+        }
+
+        private void GetDatabase()
+        {
+            using (System.IO.StreamReader sr = new System.IO.StreamReader("Database.txt"))
+            {
+                while (!sr.EndOfStream)
+                {
+                    string splitMe = sr.ReadLine();
+                    Database.Add(splitMe);
+                }
+            }
+        }
+
+        private string Convert(string text, Mode convertMode)
+        {
+            text = text.ToLower();
+
+            string roma = string.Empty;
+            string hira = string.Empty;
+            string kata = string.Empty;
+
+            foreach (string row in Database)
+            {
+                var split = row.Split('@');
+                roma = split[0];
+                hira = split[1];
+                kata = split[2];
+
+                switch (convertMode)
+                {
+                    case Mode.Romaji:
+                        text = text.Replace(hira, roma);
+                        text = text.Replace(kata, roma.ToUpper());
+                        break;
+                    case Mode.Hiragana:
+                        text = text.Replace(roma, hira);
+                        break;
+                    case Mode.Katakana:
+                        text = text.Replace(roma, kata);
+                        break;
+                }
+            }
+            return text;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -26,7 +80,34 @@ namespace Japanese_OCR
                 Bitmap img = new Bitmap(openfile.FileName);
                 TesseractEngine ocr = new TesseractEngine("./tessdata", "jpn", EngineMode.Default);
                 Page page = ocr.Process(img, PageSegMode.Auto);
-                textBox1.Text = page.GetText();
+                String inputText = page.GetText();
+                richTextBox1.Text = Convert(inputText, Mode.Hiragana);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openfile = new OpenFileDialog();
+            if (openfile.ShowDialog() == DialogResult.OK)
+            {
+                Bitmap img = new Bitmap(openfile.FileName);
+                TesseractEngine ocr = new TesseractEngine("./tessdata", "jpn", EngineMode.Default);
+                Page page = ocr.Process(img, PageSegMode.Auto);
+                String inputText = page.GetText();
+                richTextBox1.Text = Convert(inputText, Mode.Katakana);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openfile = new OpenFileDialog();
+            if (openfile.ShowDialog() == DialogResult.OK)
+            {
+                Bitmap img = new Bitmap(openfile.FileName);
+                TesseractEngine ocr = new TesseractEngine("./tessdata", "jpn", EngineMode.Default);
+                Page page = ocr.Process(img, PageSegMode.Auto);
+                String inputText = page.GetText();
+                richTextBox1.Text = Convert(inputText, Mode.Romaji);
             }
         }
     }
