@@ -13,6 +13,8 @@ namespace Japanese_OCR
 {
     public partial class Form1 : Form
     {
+        OpenFileDialog openfile = new OpenFileDialog();
+        String inputText;
         enum Mode
         {
             Hiragana,
@@ -77,19 +79,10 @@ namespace Japanese_OCR
 
         private String process()
         {
-            OpenFileDialog openfile = new OpenFileDialog();
-            String inputText;
-            if (openfile.ShowDialog() == DialogResult.OK)
-            {
-                Bitmap img = new Bitmap(openfile.FileName);
-                TesseractEngine ocr = new TesseractEngine("./tessdata", "jpn", EngineMode.Default);
-                Page page = ocr.Process(img, PageSegMode.Auto);
-                inputText = page.GetText();
-            }
-            else
-            {
-                inputText = "";
-            }
+            Bitmap img = new Bitmap(richTextBox2.Text);
+            TesseractEngine ocr = new TesseractEngine("./tessdata", "jpn", EngineMode.Default);
+            Page page = ocr.Process(img, PageSegMode.Auto);
+            inputText = page.GetText();
             return inputText;
         }
 
@@ -109,6 +102,18 @@ namespace Japanese_OCR
         {
             String inputText = process();
             richTextBox1.Text = Convert(inputText, Mode.Romaji);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (openfile.ShowDialog() == DialogResult.OK)
+            {
+                richTextBox2.Text = openfile.FileName;
+            }
+            else
+            {
+                inputText = "";
+            }
         }
     }
 }
