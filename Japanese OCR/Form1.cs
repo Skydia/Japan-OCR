@@ -29,6 +29,8 @@ namespace Japanese_OCR
             InitializeComponent();
             this.MaximizeBox = false;
             GetDatabase();
+            tabPage1.Text = "Photos";
+            tabPage2.Text = "Camera";
         }
 
         private void GetDatabase()
@@ -86,7 +88,7 @@ namespace Japanese_OCR
             return inputText;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             String inputText = process();
             richTextBox1.Text = Convert(inputText, Mode.Hiragana);
