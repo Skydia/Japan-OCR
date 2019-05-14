@@ -82,7 +82,7 @@ namespace Japanese_OCR
             }
             return text;
         }
-
+        //Process from photo setting
         private String process()
         {
             Bitmap img = new Bitmap(richTextBox2.Text);
@@ -134,7 +134,7 @@ namespace Japanese_OCR
                 richTextBox3.Text = "No camera device applied!";
             }
         }
-
+        //Button setting
         private void button1_Click_1(object sender, EventArgs e)
         {
             String inputText = process();
