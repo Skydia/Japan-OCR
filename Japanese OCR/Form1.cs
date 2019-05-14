@@ -100,24 +100,8 @@ namespace Japanese_OCR
                 frame = new VideoCaptureDevice(Devices[0].MonikerString);
                 frame.NewFrame += new AForge.Video.NewFrameEventHandler(NewFrame_event);
                 frame.Start();
-                Bitmap img = new Bitmap(pictureBox1.Image);
-                TesseractEngine ocr = new TesseractEngine("./tessdata", "jpn", EngineMode.Default);
-                Page page = ocr.Process(img, PageSegMode.Auto);
-                String inputText = page.GetText();
-                if (radioButton1.Checked)
-                {
-                    richTextBox3.Text = Convert(inputText, Mode.Hiragana);
-                }
-                else if (radioButton2.Checked)
-                {
-                    richTextBox3.Text = Convert(inputText, Mode.Katakana);
-                }
-                else if (radioButton3.Checked)
-                {
-                    richTextBox3.Text = Convert(inputText, Mode.Romaji);
-                }
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 richTextBox3.Text = "No camera device applied!";
             }
@@ -129,7 +113,7 @@ namespace Japanese_OCR
             {
                 pictureBox1.Image = (Image)e.Frame.Clone();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 richTextBox3.Text = "No camera device applied!";
             }
@@ -167,27 +151,49 @@ namespace Japanese_OCR
 
         private void button5_Click(object sender, EventArgs e)
         {
+            button6.Enabled = true;
+            button8.Enabled = true;
             Start_Cam();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             pictureBox1.Image = null;
-            try
-            {
+            if(frame!=null)
                 frame.Stop();
-            }
-            catch (Exception ex) {richTextBox3.Text = "No camera device applied!";}
-                
+            button8.Enabled = false;
+            button6.Enabled = false;
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            try
-            {
+            if(frame!=null)
                 frame.Stop();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image == null)
+                richTextBox3.Text = "No camera device applied!";
+            else
+            {
+                Bitmap img = new Bitmap(pictureBox1.Image);
+                TesseractEngine ocr = new TesseractEngine("./tessdata", "jpn", EngineMode.Default);
+                Page page = ocr.Process(img, PageSegMode.Auto);
+                String inputText = page.GetText();
+                if (radioButton1.Checked)
+                {
+                    richTextBox3.Text = Convert(inputText, Mode.Hiragana);
+                }
+                else if (radioButton2.Checked)
+                {
+                    richTextBox3.Text = Convert(inputText, Mode.Katakana);
+                }
+                else if (radioButton3.Checked)
+                {
+                    richTextBox3.Text = Convert(inputText, Mode.Romaji);
+                }
             }
-            catch (Exception ex) { richTextBox3.Text = "No camera device applied!"; }
         }
     }
 }

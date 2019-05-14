@@ -46,6 +46,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -147,6 +148,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button6);
             this.tabPage2.Controls.Add(this.radioButton3);
             this.tabPage2.Controls.Add(this.radioButton2);
             this.tabPage2.Controls.Add(this.radioButton1);
@@ -216,6 +218,7 @@
             // 
             // button8
             // 
+            this.button8.Enabled = false;
             this.button8.Location = new System.Drawing.Point(388, 307);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(94, 23);
@@ -226,7 +229,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(286, 307);
+            this.button5.Location = new System.Drawing.Point(192, 307);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(96, 23);
             this.button5.TabIndex = 1;
@@ -242,6 +245,17 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // button6
+            // 
+            this.button6.Enabled = false;
+            this.button6.Location = new System.Drawing.Point(294, 307);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(88, 23);
+            this.button6.TabIndex = 10;
+            this.button6.Text = "Process";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Form1
             // 
@@ -283,6 +297,7 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Button button6;
     }
 }
 
