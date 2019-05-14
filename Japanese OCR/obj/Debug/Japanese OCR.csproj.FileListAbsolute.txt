@@ -34,3 +34,9 @@ E:\KULIAH\Semester 4\Artifisial Intelegence\Project AI\Japan-OCR\Japanese OCR\ob
 E:\KULIAH\Semester 4\Artifisial Intelegence\Project AI\Japan-OCR\Japanese OCR\obj\Debug\Japanese OCR.csproj.CopyComplete
 E:\KULIAH\Semester 4\Artifisial Intelegence\Project AI\Japan-OCR\Japanese OCR\obj\Debug\Japanese OCR.exe
 E:\KULIAH\Semester 4\Artifisial Intelegence\Project AI\Japan-OCR\Japanese OCR\obj\Debug\Japanese OCR.pdb
+D:\VS Projects\Japanese OCR\Japanese OCR\bin\Debug\AForge.dll
+D:\VS Projects\Japanese OCR\Japanese OCR\bin\Debug\AForge.Video.DirectShow.dll
+D:\VS Projects\Japanese OCR\Japanese OCR\bin\Debug\AForge.Video.dll
+D:\VS Projects\Japanese OCR\Japanese OCR\bin\Debug\AForge.xml
+D:\VS Projects\Japanese OCR\Japanese OCR\bin\Debug\AForge.Video.xml
+D:\VS Projects\Japanese OCR\Japanese OCR\bin\Debug\AForge.Video.DirectShow.xml

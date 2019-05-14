@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tesseract;
+using AForge.Video;
+using AForge.Video.DirectShow;
 
 namespace Japanese_OCR
 {
     public partial class Form1 : Form
     {
+        VideoCaptureDevice frame;
+        FilterInfoCollection Devices;
         OpenFileDialog openfile = new OpenFileDialog();
         String inputText;
         enum Mode
@@ -87,6 +91,49 @@ namespace Japanese_OCR
             inputText = page.GetText();
             return inputText;
         }
+        //Camera Setting
+        private void Start_Cam()
+        {
+            try
+            {
+                Devices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+                frame = new VideoCaptureDevice(Devices[0].MonikerString);
+                frame.NewFrame += new AForge.Video.NewFrameEventHandler(NewFrame_event);
+                frame.Start();
+                Bitmap img = new Bitmap(pictureBox1.Image);
+                TesseractEngine ocr = new TesseractEngine("./tessdata", "jpn", EngineMode.Default);
+                Page page = ocr.Process(img, PageSegMode.Auto);
+                String inputText = page.GetText();
+                if (radioButton1.Checked)
+                {
+                    richTextBox3.Text = Convert(inputText, Mode.Hiragana);
+                }
+                else if (radioButton2.Checked)
+                {
+                    richTextBox3.Text = Convert(inputText, Mode.Katakana);
+                }
+                else if (radioButton3.Checked)
+                {
+                    richTextBox3.Text = Convert(inputText, Mode.Romaji);
+                }
+            }
+            catch(Exception ex)
+            {
+                richTextBox3.Text = "No camera device applied!";
+            }
+        }
+
+        private void NewFrame_event(object send, NewFrameEventArgs e)
+        {
+            try
+            {
+                pictureBox1.Image = (Image)e.Frame.Clone();
+            }
+            catch (Exception ex)
+            {
+                richTextBox3.Text = "No camera device applied!";
+            }
+        }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -116,6 +163,31 @@ namespace Japanese_OCR
             {
                 inputText = "";
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Start_Cam();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = null;
+            try
+            {
+                frame.Stop();
+            }
+            catch (Exception ex) {richTextBox3.Text = "No camera device applied!";}
+                
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                frame.Stop();
+            }
+            catch (Exception ex) { richTextBox3.Text = "No camera device applied!"; }
         }
     }
 }
