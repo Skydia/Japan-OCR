@@ -40,3 +40,24 @@ D:\VS Projects\Japanese OCR\Japanese OCR\bin\Debug\AForge.Video.dll
 D:\VS Projects\Japanese OCR\Japanese OCR\bin\Debug\AForge.xml
 D:\VS Projects\Japanese OCR\Japanese OCR\bin\Debug\AForge.Video.xml
 D:\VS Projects\Japanese OCR\Japanese OCR\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\Diemas\Documents\VS Projects\Japan-OCR\Japanese OCR\bin\Debug\x64\liblept172.dll
+C:\Users\Diemas\Documents\VS Projects\Japan-OCR\Japanese OCR\bin\Debug\x64\libtesseract304.dll
+C:\Users\Diemas\Documents\VS Projects\Japan-OCR\Japanese OCR\bin\Debug\x86\liblept172.dll
+C:\Users\Diemas\Documents\VS Projects\Japan-OCR\Japanese OCR\bin\Debug\x86\libtesseract304.dll
+C:\Users\Diemas\Documents\VS Projects\Japan-OCR\Japanese OCR\bin\Debug\tessdata\jpn.traineddata
+C:\Users\Diemas\Documents\VS Projects\Japan-OCR\Japanese OCR\bin\Debug\Japanese OCR.exe.config
+C:\Users\Diemas\Documents\VS Projects\Japan-OCR\Japanese OCR\bin\Debug\Japanese OCR.exe
+C:\Users\Diemas\Documents\VS Projects\Japan-OCR\Japanese OCR\bin\Debug\Japanese OCR.pdb
+C:\Users\Diemas\Documents\VS Projects\Japan-OCR\Japanese OCR\bin\Debug\Tesseract.dll
+C:\Users\Diemas\Documents\VS Projects\Japan-OCR\Japanese OCR\bin\Debug\Tesseract.xml
+C:\Users\Diemas\Documents\VS Projects\Japan-OCR\Japanese OCR\obj\Debug\Japanese OCR.csprojAssemblyReference.cache
+C:\Users\Diemas\Documents\VS Projects\Japan-OCR\Japanese OCR\obj\Debug\Japanese_OCR.Form1.resources
+C:\Users\Diemas\Documents\VS Projects\Japan-OCR\Japanese OCR\obj\Debug\Japanese_OCR.Properties.Resources.resources
+C:\Users\Diemas\Documents\VS Projects\Japan-OCR\Japanese OCR\obj\Debug\Japanese OCR.csproj.GenerateResource.cache
+C:\Users\Diemas\Documents\VS Projects\Japan-OCR\Japanese OCR\obj\Debug\Japanese OCR.csproj.CoreCompileInputs.cache
+C:\Users\Diemas\Documents\VS Projects\Japan-OCR\Japanese OCR\obj\Debug\Japanese OCR.csproj.CopyComplete
+C:\Users\Diemas\Documents\VS Projects\Japan-OCR\Japanese OCR\obj\Debug\Japanese OCR.exe
+C:\Users\Diemas\Documents\VS Projects\Japan-OCR\Japanese OCR\obj\Debug\Japanese OCR.pdb
+C:\Users\Diemas\Documents\VS Projects\Japan-OCR\Japanese OCR\bin\Debug\AForge.dll
+C:\Users\Diemas\Documents\VS Projects\Japan-OCR\Japanese OCR\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\Diemas\Documents\VS Projects\Japan-OCR\Japanese OCR\bin\Debug\AForge.Video.dll

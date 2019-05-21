@@ -38,6 +38,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -46,7 +47,6 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button6 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -103,6 +103,7 @@
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(19, 6);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(463, 245);
             this.richTextBox1.TabIndex = 12;
             this.richTextBox1.Text = "";
@@ -165,6 +166,17 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button6
+            // 
+            this.button6.Enabled = false;
+            this.button6.Location = new System.Drawing.Point(294, 307);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(88, 23);
+            this.button6.TabIndex = 10;
+            this.button6.Text = "Process";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
@@ -212,6 +224,7 @@
             // 
             this.richTextBox3.Location = new System.Drawing.Point(3, 6);
             this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.ReadOnly = true;
             this.richTextBox3.Size = new System.Drawing.Size(209, 266);
             this.richTextBox3.TabIndex = 5;
             this.richTextBox3.Text = "";
@@ -245,17 +258,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // button6
-            // 
-            this.button6.Enabled = false;
-            this.button6.Location = new System.Drawing.Point(294, 307);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(88, 23);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "Process";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Form1
             // 

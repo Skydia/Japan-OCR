@@ -100,6 +100,8 @@ namespace Japanese_OCR
                 frame = new VideoCaptureDevice(Devices[0].MonikerString);
                 frame.NewFrame += new AForge.Video.NewFrameEventHandler(NewFrame_event);
                 frame.Start();
+                button6.Enabled = true;
+                button8.Enabled = true;
             }
             catch(Exception)
             {
@@ -151,8 +153,6 @@ namespace Japanese_OCR
 
         private void button5_Click(object sender, EventArgs e)
         {
-            button6.Enabled = true;
-            button8.Enabled = true;
             Start_Cam();
         }
 
